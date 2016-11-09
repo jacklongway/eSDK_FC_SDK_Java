@@ -1,0 +1,101 @@
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%">
+			    <label id="inputParam"></label>
+			</td>
+			<td></td>
+			<td width="32%"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%"><font color='red'>* </font><label id="querySiteReqEx_uriLabel"></label></td>
+			<td align="left">
+			    <div id="querySiteReqEx_uri_select" style="width:100px;height:20px;float:left;position:relative;">
+					<select id = "querySiteReqEx_uri" style="width:234px;">
+					</select>
+				</div>
+			</td>
+			<td align="left"><span class="span_tip" id="querySiteReqEx_uriErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="queryDataStoresReqEx_nameLabel"></label></td>
+			<td align="left">
+			    <input type="text" id="queryDataStoresReqEx_name" 
+			    	value="" style="color: gray;" onblur="clearBlurStyle(this)">
+			</td>
+			<td align="left"><span class="span_tip" id="queryDataStoresReqEx_nameErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="queryDataStoresReqEx_limitLabel"></label></td>
+			<td align="left">
+			    <input type="text" id="queryDataStoresReqEx_limit" 
+			    	value="10" style="color: gray;" onblur="clearBlurStyle(this)">
+			</td>
+			<td align="left"><span class="span_tip" id="queryDataStoresReqEx_limitErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="queryDataStoresReqEx_offsetLabel"></label></td>
+			<td align="left">
+			    <input type="text" id="queryDataStoresReqEx_offset" onblur="clearBlurStyle(this)"
+			    	value="0" style="color: gray;">
+			</td>
+			<td align="left"><span class="span_tip" id="queryDataStoresReqEx_offsetErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td align="left">
+			    <input class="btn"
+				    onmouseover="this.className='btn_mouseover'"
+				    onmouseout="this.className='btn'" type="button"
+				    id="queryDataStoresBtn" onclick="queryDataStoresCall();">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade>
+</div>
+
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%">
+			    <label id="outputParam"></label>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%"><label id="resultCode"></label>
+			</td>
+			<td align="left"><input type="text" id="queryDataStores_resultCode"
+				name="queryDataStores_resultCode" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" valign="top"><label id="queryDataStoresLabel"></label>
+			</td>
+			<td align="left">
+			    <textarea id="DataStoresInfo"
+					name="DataStoresInfo" readonly="readonly"></textarea>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade>
+</div>
+
+<div class="status_div">
+	<label id="queryDataStores_status" style="color:red;"></label>
+</div>

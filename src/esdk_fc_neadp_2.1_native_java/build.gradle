@@ -1,0 +1,20 @@
+
+
+dependencies {
+	compile ':gson:2.2.2'
+	compile ':org.restlet:2.2.1'
+	compile ':org.restlet.ext.slf4j:2.2.1'
+	
+	compile ':commons-io:2.4'
+	compile ':commons-logging:1.1.1'
+	compile ':httpclient:4.2.3'
+	compile ':httpcore:4.2.2'
+	compile ':httpmime:4.2.3'
+	
+	compile ':slf4j-api:1.7.5'
+	compile ':log4j:1.2.16'
+	compile ':slf4j-log4j12:1.7.5'
+	
+
+
+}

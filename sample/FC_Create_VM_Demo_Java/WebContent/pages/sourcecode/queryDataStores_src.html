@@ -1,0 +1,154 @@
+<div>
+	<label style="font-weight: bold;">QueryDataStoresServlet.java:</label>
+	<br><br>
+	<label style="font-weight: bold;"><img src="pic/description.jpg"></label>
+	<br><br>
+	<label style="font-weight: bold;">红色加粗部分代码为接口调用,其他颜色为模拟IDE开发工具中的色彩，便于阅读。</label>
+	<br><br>
+    <span style='color:#7F0055;font-weight:bold;'>package</span><span style='color:black;'> com.huawei.esdk.fusioncompute.demo.servlet;</span>
+	<br><br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> java.io.IOException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> java.io.PrintWriter;</span>
+	<br><br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.ServletException;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServlet;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServletRequest;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> javax.servlet.http.HttpServletResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> org.apache.log4j.Logger;</span>
+	<br><br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.google.gson.Gson;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.demo.factory.ServiceManageFactory;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.demo.utils.ParametersUtils;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.local.model.FCSDKResponse;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.local.model.PageList;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.local.model.common.LoginResp;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.local.model.storage.Datastore;</span>
+	<br>
+	<span style='color:#7F0055;font-weight:bold;'>import</span><span style='color:black;'> com.huawei.esdk.fusioncompute.local.model.storage.DatastoreQueryParams;</span>
+	<br>
+	<br>
+	<span style='color:#3F5FBF;'>
+		/**<br>
+		 * “查询DataStores”请求处理类<br> 
+	 	 * <br> 
+	 	 * @author　xxxxxxxx<br> 
+	 	 * @see<br> 
+	 	 * @since　eSDK Cloud V100R003C50<br> 
+	 	 */</span><br> 
+	<span style='color:#7F0055;font-weight:bold;'>public class</span> QueryDataStoresServlet <span style='color:#7F0055;font-weight:bold;'>extends</span> HttpServlet<br> 
+	{<br> 
+	<span style='color:#3F5FBF;'>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/**<br> 
+	　　  * 序列化版本标识<br> 
+	　　  */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final long</span> <span style="color:#0000C0;font-style:italic;">serialVersionUID</span> = 190954570327110271L;<br> 
+	　　<br> 
+	　　<span style='color:#3F5FBF;'>
+	   /**<br> 
+	　　 * log日志对象<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private static final</span> Logger <span style="color:#0000C0;font-style:italic;">LOGGER</span> = Logger.getLogger(QueryDataStoresServlet.<span style='color:#7F0055;font-weight:bold;'>class</span>);<br> 
+	　　<br>
+	　　<span style='color:#3F5FBF;'>
+		/**<br> 
+	　　 * gson，用于转换String和json之间的转换<br> 
+	　　 */</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>private</span> Gson <span style="color:#0000C0;">gson</span> = <span style='color:#7F0055;font-weight:bold;'>new</span> Gson();<br> 
+	　　<br>
+	   <br> 
+	　　<span style="color:#646464;">@Override</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>protected void</span> doPost(HttpServletRequest request, HttpServletResponse response)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException, IOException<br> 
+	　　{<br> 
+	　　　　doGet(request, response);<br> 
+	　　}<br> 
+	　　<br> 
+	　　<span style="color:#646464;">@Override</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>protected void</span> doGet(HttpServletRequest request, HttpServletResponse response)<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>throws</span> ServletException, IOException<br> 
+	　　{<br> 
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#3F7F5F;'>// 设置request的编码</span><br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request.setCharacterEncoding(<span style="color:#0000C0;">"UTF-8"</span>);<br><br> 
+	　　　　<span style='color:#3F7F5F;'>// 获取需要调用的方法名</span><br> 
+	　　　　String methodName = request.getParameter(<span style="color:#0000C0;">"method"</span>);<br> 
+	　　　　String resp = <span style="color:#0000C0;">""</span>;<br> 
+	　　　　<br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>if</span> (<span style="color:#0000C0;">"queryDataStores"</span>.equals(methodName))<br> 
+	　　　　{<br> 
+	　　　　　　<span style='color:#3F7F5F;'>// 查询DataStores</span><br> 
+	　　　　　　resp = queryDataStores(request);<br> 
+	　　　　}<br> 
+	　　　　<br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#3F7F5F;'>// 设置response的编码</span><br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response.setContentType(<span style="color:#0000C0;">"application/json;charset=UTF-8"</span>);<br>
+	　　　　<span style='color:#3F7F5F;'>// 输出流</span><br> 
+	　　　　PrintWriter pw = response.getWriter();<br> 
+	　　　　pw.print(resp);<br> 
+	　　　　pw.close();<br> 
+	　　}<br> 
+	　　<br>
+		<span style='color:#3F5FBF;'>
+	　　/** <br> 
+	　　* 查询DataStores信息<br> 
+	　　* <br> 
+	　　* @param request HttpServletRequest对象<br> 
+	　　* @return json格式的字符串<br> 
+	　　* @see<br> 
+	　　* @since　eSDK Cloud V100R003C50<br>
+	　　*/</span><br> 
+	　　<span style='color:#7F0055;font-weight:bold;'>public</span> String queryDataStores(HttpServletRequest request)<br> 
+	　　{<br> 
+	　　　　<span style='color:#3F7F5F;'>// 定义返回结果</span><br> 
+	　　　　String response = <span style='color:#7F0055;font-weight:bold;'>null</span>;<br> 
+	　　　　<br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String userName = ParametersUtils.<span style="color:#0000C0;font-style:italic;">userName</span>;<br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String password = ParametersUtils.<span style="color:#0000C0;font-style:italic;">password</span>;<br>
+	　　　　<br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#3F7F5F;'>// 鉴权</span><br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FCSDKResponse&lt;LoginResp&gt; loginResp = ServiceManageFactory.getUserService().login(userName, password);<br><br> 
+	　　　　<span style='color:#7F0055;font-weight:bold;'>if</span> (!<span style="color:#0000C0;font-style:italic;">"00000000"</span>.equals(loginResp.getErrorCode()))<br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000C0;font-style:italic;">LOGGER</span>.error(<span style="color:#0000C0;">"Failed to Login FC System!"</span>);<br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:#7F0055;font-weight:bold;'>return</span> <span style="color:#0000C0;">gson</span>.toJson(loginResp);<br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+	     <br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Login Success!"</span>);<br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Begin to query PortGroups information."</span>);<br> 
+	　　　　<br> 
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String name = request.getParameter(<span style="color:#0000C0;">"name"</span>);<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integer limit = Integer.valueOf(request.getParameter(<span style="color:#0000C0;">"limit"</span>));<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integer offset = Integer.valueOf(request.getParameter(<span style="color:#0000C0;">"offset"</span>));<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String siteUri = <span style="color:#0000C0;">"/service/sites/400E07BB"</span>;<br> 
+	　　　　<br> 
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DatastoreQueryParams param = new DatastoreQueryParams() <br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param.setLimit(limit); <br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param.setOffset(offset); <br>
+	     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param.setName(name); <br>
+         <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="red" style="font-weight: bold;">FCSDKResponse&lt;PageList&lt;Datastore&gt;&gt; = ServiceManageFactory.getDataStorageResource().queryDataStores(siteUri, param);</font><br>
+         <br>
+	　　　 &nbsp;&nbsp;<span style='color:#3F7F5F;'>// 根据接口返回数据生成JSON字符串，以便于页面展示</span><br> 
+	　　　 &nbsp;&nbsp;response = <span style="color:#0000C0;">gson</span>.toJson(resp);<br><br>
+	
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpSession session = request.getSession();<br>
+		   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;session.setAttribute(<span style="color:#0000C0;">"DATASTORESRESOURCE_RES"</span>, resp);<br>
+		   
+	　　　 &nbsp;&nbsp;<span style="color:#0000C0;font-style:italic;">LOGGER</span>.info(<span style="color:#0000C0;">"Finish to query Datastores, response is : "</span> + response);<br> 
+	　　　 <br> 
+	　　　&nbsp;&nbsp; <span style='color:#7F0055;font-weight:bold;'>return</span> response;<br> 
+	　　}<br> 
+	　　<br> 
+	}
+	<br><br>
+</div>

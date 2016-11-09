@@ -1,0 +1,112 @@
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%">
+			    <label id="inputParam"></label>
+			</td>
+			<td></td>
+			<td width="28%"></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="querySiteReqEx_uriLabel"></label></td>
+			<td align="left">
+			    <div id="querySiteReqEx_uri_select" style="width:100px;height:20px;float:left;position:relative;">
+					<select id = "querySiteReqEx_uri" style="width:234px;">
+					</select>
+				</div>
+			</td>
+			<td align="left"><span class="span_tip" id="querySiteReqEx_uriErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%"><font color='red'>* </font><label id="queryDVSwitchEx_uriLabel"></label></td>
+			<td align="left">
+			    <div id="queryDVSwitchEx_uri_select" style="width:100px;height:20px;float:left;position:relative;">
+					<select id = "queryDVSwitchEx_uri" style="width:234px;" onfocus="hasOption(this)">
+					</select>
+				</div>
+			</td>
+			<td align="left"><span class="span_tip" id="queryDVSwitchEx_uriErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="queryPortGroupsReqEx_nameLabel"></label></td>
+			<td align="left">
+			    <input type="text" id="queryPortGroupsReqEx_name" onblur="clearStyle(this)"
+			    	value="" style="color: gray;">
+			</td>
+			<td/>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="queryPortGroupsReqEx_limitLabel"></label></td>
+			<td align="left">
+			    <input type="text" id="queryPortGroupsReqEx_limit" onblur="clearBlurStyle(this)"
+			    	value="50" style="color: gray;">
+			</td>
+			<td align="left"><span class="span_tip" id="queryPortGroupsReqEx_limitErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%">&nbsp;&nbsp;<label id="queryPortGroupsReqEx_offsetLabel"></label></td>
+			<td align="left">
+			    <input type="text" id="queryPortGroupsReqEx_offset" onblur="clearBlurStyle(this)"
+			    	value="0" style="color: gray;">
+			</td>
+			<td align="left"><span class="span_tip" id="queryPortGroupsReqEx_offsetErrTip" ></span></td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td align="left">
+			    <input class="btn"
+				    onmouseover="this.className='btn_mouseover'"
+				    onmouseout="this.className='btn'" type="button"
+				    id="queryPortGroupsBtn" onclick="queryPortGroupsCall();">
+			</td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade>
+</div>
+
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%">
+			    <label id="outputParam"></label>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%"><label id="resultCode"></label>
+			</td>
+			<td align="left"><input type="text" id="queryPortGroups_resultCode"
+				name="queryPortGroups_resultCode" readonly="readonly">
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" valign="top"><label id="PortGroupsLabel"></label>
+			</td>
+			<td align="left">
+			    <textarea id="PortGroupsInfo"
+					name="PortGroupsInfo" readonly="readonly"></textarea>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade>
+</div>
+
+<div class="status_div">
+	<label id="queryPortGroups_status" style="color:red;"></label>
+</div>

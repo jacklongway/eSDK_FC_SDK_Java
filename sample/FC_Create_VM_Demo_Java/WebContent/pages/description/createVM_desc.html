@@ -1,0 +1,823 @@
+<a name="top" class="a_anchor_top"></a>
+<div>
+	<table style="width: 100%;">
+		<tr>
+			<td style="width: 180px;"><label class="description_label description_function" id="createVMInterface"></label></td>
+			<td><label class="description_function" id="createVMInterfaceName"></label></td>
+		</tr>
+		<tr>
+			<td colspan="2"><label class="description_label" id="CreateVmDesc"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- 输入参数描述 -->
+	<label class="description_label" id="inputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>siteUri</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_siteUriTd"></label></td>
+		</tr>
+		<tr>
+			<td>createVmReq</td>
+			<td><a class="a_anchor" href="#VolumeCreateParamsInfo" name="VolumeCreateParams">CreateVmReq</a></td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_volumeCreateParamsTd"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- VolumeCreateParams描述 -->
+	<div class="left">
+		<label class="description_label"><a name="VolumeCreateParamsInfo">CreateVmReq:</a></label>
+	</div>
+	<div>
+		<a href="#VolumeCreateParams"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_name"></label></td>
+		</tr>
+		<tr>
+			<td>description</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_description"></label></td>
+		</tr>
+		<tr>
+			<td>group</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_group"></label></td>
+		</tr>
+		<tr>
+			<td>location</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_location"></label></td>
+		</tr>
+		<tr>
+			<td>isBindingHost</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_isBindingHost"></label></td>
+		</tr>
+		<tr>
+			<td>vmConfig</td>
+			<td><a class="a_anchor" href="#VmConfigInfo" name="VmConfig">VmConfig</a></td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_vmConfig"></label></td>
+		</tr>
+		<tr>
+			<td>autoBoot</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_autoBoot"></label></td>
+		</tr>
+		<tr>
+			<td>osOptions</td>
+			<td><a class="a_anchor" href="#OsOptionInfo" name="OsOption">OsOption</a></td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_osOptions"></label></td>
+		</tr>
+		<tr>
+			<td>vncAccessInfo</td>
+			<td><a class="a_anchor" href="#VncAccessInfoInfo" name="VncAccessInfo">VncAccessInfo</a></td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_vncAccessInfo"></label></td>
+		</tr>
+		<tr>
+			<td>occupiedVm</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_occupiedVm"></label></td>
+		</tr>
+		<tr>
+			<td>uuid</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_uuid"></label></td>
+		</tr>
+		<tr>
+			<td>securityGroupSet</td>
+			<td>structure</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_securityGroupSet"></label></td>
+		</tr>
+		<tr>
+			<td>isMultiDiskSpeedup</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_isMultiDiskSpeedup"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- VmConfig描述 -->
+	<div class="left">
+		<label class="description_label"><a name="VmConfigInfo">VmConfig:</a></label>
+	</div>
+	<div>
+		<a href="#VmConfig"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>cpu</td>
+			<td><a class="a_anchor" href="#CPUInfo" name="CPU">CPU</a></td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_cpu"></label></td>
+		</tr>
+		<tr>
+			<td>memory</td>
+			<td><a class="a_anchor" href="#MemoryInfo" name="Memory">Memory</a></td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_memory"></label></td>
+		</tr>
+		<tr>
+			<td>disks</td>
+			<td>List&lt;<a class="a_anchor" href="#DiskInfo" name="Disk">Disk</a>&gt;</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_disks"></label></td>
+		</tr>
+		<tr>
+			<td>nics</td>
+			<td>List&lt;<a class="a_anchor" href="#NicInfo" name="Nic">Nic</a>&gt;</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_nics"></label></td>
+		</tr>
+		<tr>
+			<td>usb</td>
+			<td>List&lt;<a class="a_anchor" href="#UsbInfo" name="Usb">Usb</a>&gt;</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_usb"></label></td>
+		</tr>
+		<tr>
+			<td>gpu</td>
+			<td>List&lt;<a class="a_anchor" href="#GPUInfo" name="GPU">GPU</a>&gt;</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_gpu"></label></td>
+		</tr>
+		<tr>
+			<td>properties</td>
+			<td><a class="a_anchor" href="#PropertyInfo" name="Property">Property</a></td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_properties"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- CPU描述 -->
+	<div class="left">
+		<label class="description_label"><a name="CPUInfo">CPU:</a></label>
+	</div>
+	<div>
+		<a href="#CPU"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>quantity</td>
+			<td>Integer</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_CPU_quantity"></label></td>
+		</tr>
+		<tr>
+			<td>coresPerSocket</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_CPU_coresPerSocket"></label></td>
+		</tr>
+		<tr>
+			<td>reservation</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_CPU_reservation"></label></td>
+		</tr>
+		<tr>
+			<td>weight</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_CPU_weight"></label></td>
+		</tr>
+		<tr>
+			<td>limit</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_CPU_limit"></label></td>
+		</tr>
+		<tr>
+			<td>cpuHotPlug</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_CPU_cpuHotPlug"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- Memory描述 -->
+	<div class="left">
+		<label class="description_label"><a name="MemoryInfo">Memory:</a></label>
+	</div>
+	<div>
+		<a href="#Memory"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>quantityMB</td>
+			<td>Integer</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Memory_quantityMB"></label></td>
+		</tr>
+		<tr>
+			<td>reservation</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Memory_reservation"></label></td>
+		</tr>
+		<tr>
+			<td>weight</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Memory_weight"></label></td>
+		</tr>
+		<tr>
+			<td>limit</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Memory_limit"></label></td>
+		</tr>
+		<tr>
+			<td>memHotPlug</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Memory_memHotPlug"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- Disk描述 -->
+	<div class="left">
+		<label class="description_label"><a name="DiskInfo">Disk:</a></label>
+	</div>
+	<div>
+		<a href="#Disk"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>pciType</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_pciType"></label></td>
+		</tr>
+		<tr>
+			<td>sequenceNum</td>
+			<td>Integer</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_sequenceNum"></label></td>
+		</tr>
+		<tr>
+			<td>volumeUrn</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_volumeUrn"></label></td>
+		</tr>
+		<tr>
+			<td>volumeUuid</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_volumeUuid"></label></td>
+		</tr>
+		<tr>
+			<td>quantityGB</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_quantityGB"></label></td>
+		</tr>
+		<tr>
+			<td>isDataCopy</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_isDataCopy"></label></td>
+		</tr>
+		<tr>
+			<td>datastoreUrn</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_datastoreUrn"></label></td>
+		</tr>
+		<tr>
+			<td>isThin</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_isThin"></label></td>
+		</tr>
+		<tr>
+			<td>indepDisk</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_indepDisk"></label></td>
+		</tr>
+		<tr>
+			<td>persistentDisk</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_persistentDisk"></label></td>
+		</tr>
+		<tr>
+			<td>storageType</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_storageType"></label></td>
+		</tr>
+		<tr>
+			<td>volType</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_volType"></label></td>
+		</tr>
+		<tr>
+			<td>maxReadBytes</td>
+			<td>Long</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_maxReadBytes"></label></td>
+		</tr>
+		<tr>
+			<td>maxWriteBytes</td>
+			<td>Long</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_maxWriteBytes"></label></td>
+		</tr>
+		<tr>
+			<td>maxReadRequest</td>
+			<td>Long</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_maxReadRequest"></label></td>
+		</tr>
+		<tr>
+			<td>maxWriteRequest</td>
+			<td>Long</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_maxWriteRequest"></label></td>
+		</tr>
+		<tr>
+			<td>type</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_type"></label></td>
+		</tr>
+		<tr>
+			<td>diskName</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_diskName"></label></td>
+		</tr>
+		<tr>
+			<td>ioWeight</td>
+			<td>Long</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_ioWeight"></label></td>
+		</tr>
+		
+		<tr>
+			<td>datastoreName</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Disk_datastoreName"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- Nic描述 -->
+	<div class="left">
+		<label class="description_label"><a name="NicInfo">Nic:</a></label>
+	</div>
+	<div>
+		<a href="#Nic"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_name"></label></td>
+		</tr>
+		<tr>
+			<td>urn</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_urn"></label></td>
+		</tr>
+		<tr>
+			<td>uri</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_uri"></label></td>
+		</tr>
+		<tr>
+			<td>portGroupUrn</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_portGroupUrn"></label></td>
+		</tr>
+		<tr>
+			<td>portGroupName</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_portGroupName"></label></td>
+		</tr>
+		<tr>
+			<td>mac</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_mac"></label></td>
+		</tr>
+		<tr>
+			<td>ip</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_ip"></label></td>
+		</tr>
+		<tr>
+			<td>ips6</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_ips6"></label></td>
+		</tr>
+		<tr>
+			<td>sequenceNum</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_sequenceNum"></label></td>
+		</tr>
+		<tr>
+			<td>virtIo</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_virtIo"></label></td>
+		</tr>
+		<tr>
+			<td>ipList</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_ipList"></label></td>
+		</tr>
+		<tr>
+			<td>nicType</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Nic_nicType"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- Usb描述 -->
+	<div class="left">
+		<label class="description_label"><a name="UsbInfo">Usb:</a></label>
+	</div>
+	<div>
+		<a href="#Usb"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>controllerType</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Usb_controllerType"></label></td>
+		</tr>
+		<tr>
+			<td>device</td>
+			<td>List&lt;<a class="a_anchor" href="#UsbDeviceInfo" name="UsbDevice">UsbDevice</a>&gt;</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Usb_device"></label></td>
+		</tr>
+		<tr>
+			<td>usbHostName</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Usb_usbHostName"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- UsbDevice描述 -->
+	<div class="left">
+		<label class="description_label"><a name="UsbDeviceInfo">UsbDevice:</a></label>
+	</div>
+	<div>
+		<a href="#UsbDevice"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>usbUrn</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Usb_UsbDevice_usbUrn"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- GPU描述 -->
+	<div class="left">
+		<label class="description_label"><a name="GPUInfo">GPU:</a></label>
+	</div>
+	<div>
+		<a href="#GPU"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>gpuUrn</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_GPU_gpuUrn"></label></td>
+		</tr>
+		<tr>
+			<td>isEffected</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_GPU_isEffected"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- Property描述 -->
+	<div class="left">
+		<label class="description_label"><a name="PropertyInfo">Property:</a></label>
+	</div>
+	<div>
+		<a href="#Property"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>bootOption</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_bootOption"></label></td>
+		</tr>
+		<tr>
+			<td>isEnableHa</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_isEnableHa"></label></td>
+		</tr>
+		<tr>
+			<td>vmFaultProcess</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_vmFaultProcess"></label></td>
+		</tr>
+		<tr>
+			<td>reoverByHost</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_reoverByHost"></label></td>
+		</tr>
+		<tr>
+			<td>clockMode</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_clockMode"></label></td>
+		</tr>
+		<tr>
+			<td>isEnableMemVol</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_isEnableMemVol"></label></td>
+		</tr>
+		<tr>
+			<td>isEnableFt</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_isEnableFt"></label></td>
+		</tr>
+		<tr>
+			<td>isAutoUpgrade</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_isAutoUpgrade"></label></td>
+		</tr>
+		<tr>
+			<td>attachType</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_attachType"></label></td>
+		</tr>
+		<tr>
+			<td>gpuShareType</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_gpuShareType"></label></td>
+		</tr>
+		<tr>
+			<td>isReserveResource</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_isReserveResource"></label></td>
+		</tr>
+		<tr>
+			<td>secureVmType</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_secureVmType"></label></td>
+		</tr>
+		<tr>
+			<td>isHpet</td>
+			<td>Boolean</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VmConfig_Property_isHpet"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- OsOption描述 -->
+	<div class="left">
+		<label class="description_label"><a name="OsOptionInfo">OsOption:</a></label>
+	</div>
+	<div>
+		<a href="#OsOption"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>osType</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_OsOption_osType"></label></td>
+		</tr>
+		<tr>
+			<td>osVersion</td>
+			<td>Integer</td>
+			<td><label id="required"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_OsOption_osVersion"></label></td>
+		</tr>
+		<tr>
+			<td>guestOSName</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_OsOption_guestOSName"></label></td>
+		</tr>
+		<tr>
+			<td>hostname</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_OsOption_hostname"></label></td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_OsOption_password"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- VncAccessInfo描述 -->
+	<div class="left">
+		<label class="description_label"><a name="VncAccessInfoInfo">VncAccessInfo:</a></label>
+	</div>
+	<div>
+		<a href="#VncAccessInfo"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>hostIp</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VncAccessInfo_hostIp"></label></td>
+		</tr>
+		<tr>
+			<td>vncPort</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VncAccessInfo_vncPort"></label></td>
+		</tr>
+		<tr>
+			<td>vncPassword</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VncAccessInfo_vncPassword"></label></td>
+		</tr>
+		<tr>
+			<td>vncOldPassword</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="CreateVmReq_VolumeCreateParams_VncAccessInfo_vncOldPassword"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- 返回参数描述 -->
+	<label class="description_label" id="outputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="outputParameterTd"></label></td>
+			<td width="20%"><label id="outputTypeTd"></label></td>
+			<td width="60%"><label id="outputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>urn</td>
+			<td>String</td>
+			<td><label id="CreateVmResp_urnTd"></label></td>
+		</tr>
+		<tr>
+			<td>uri</td>
+			<td>String</td>
+			<td><label id="CreateVmResp_uriTd"></label></td>
+		</tr>
+		<tr>
+			<td>taskUrn</td>
+			<td>String</td>
+			<td><label id="CreateVmResp_taskUrnTd"></label></td>
+		</tr>
+		<tr>
+			<td>taskUri</td>
+			<td>String</td>
+			<td><label id="CreateVmResp_taskUriTd"></label></td>
+		</tr>
+		<tr>
+			<td>errorCode</td>
+			<td>String</td>
+			<td><label id="codeTd"></label></td>
+		</tr>
+	</table>
+</div>

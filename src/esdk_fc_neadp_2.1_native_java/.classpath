@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/gson-2.3.1.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/httpclient-4.3.6.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/httpcore-4.3.3.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/httpmime-4.3.6.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/org.restlet.ext.slf4j-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/org.restlet-3.0.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="D:/eSDK_Cloud_V200R001/open_src/FCFMlibs/slf4j-log4j12-1.7.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

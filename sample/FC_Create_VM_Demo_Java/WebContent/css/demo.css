@@ -1,0 +1,687 @@
+html {
+	font-family: Microsoft Yahei, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+	font-size: 12px; 
+	text-align : 25px;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-align: 25px;
+	line-height: 23px;
+}
+
+body {
+	margin: 0;
+}
+
+h1 {
+	margin: 0.67em 0;
+	font-size: 25px;
+}
+
+h2 {
+	margin: 0.67em 0;
+	font-size: 2em;
+}
+
+h3 {
+	margin: 0.67em 0;
+	font-size: 2em;
+}
+
+td {
+	algin: left;
+	height: 22px;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+img {
+	border: 0;
+}
+
+button,input,select,textarea {
+	margin: 0;
+	font-family: Microsoft Yahei, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+	font-size: 12px;
+	width: 230px;
+	width: 228px\0;	
+}
+
+select{
+	width: 234px;
+}
+
+.confInput {
+	margin: 0;
+	font-family: Microsoft Yahei, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+	font-size: 12px;
+	width: 155px;
+	width: 253px\0;	
+}
+
+
+textarea {
+	height: 126px;
+}
+
+.left {
+	float: left;
+}
+
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	background: white; 
+	margin:0,auto;
+	width:1170px; 
+	max-width: 1170px;
+}
+
+.container:before,.container:after {
+	display: table;
+	content: " ";
+}
+
+.container:after {
+	clear: both;
+}
+
+.header {
+	border-bottom: 1px solid #CCCCCC;
+	height: 110px; 
+	padding: 0; 
+	margin: 0;
+}
+
+.logo {
+	float: right;
+}
+
+.select * {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+}
+
+.select {
+	border: 1px solid #cccccc;
+	float: right;
+	display: inline;
+	algin: right;
+	margin-left: 300px;
+}
+
+.select div {
+	border: 1px solid #f9f9f9;
+	float: left;
+}
+
+.select>div {
+	width: 80px;
+	height: 14px;
+	overflow: hidden;
+}
+
+* html .select div select {
+	display: block;
+	float: left;
+	margin: -2px;
+}
+
+/*
+.select div>select {
+	display: block;
+	width: 84px;
+	float: none;
+	margin: -2px;
+	padding: 0px;
+}
+*/
+.select div>select {
+	display: block;
+	width: 84px;
+	float: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.select:hover {
+	border: 1px solid rgb(132, 208, 249);
+}
+
+.select select>option {
+	text-indent: 2px;
+}
+
+/**.menu {
+	margin-top: 20px;
+	height: 575px;
+	width: 220px;
+	float: left;
+}*/
+.menu {
+	padding-top: 13px;
+	height: 635px;
+	width: 19%;
+	float: left;
+}
+
+/**.content {
+	margin-top: 20px;
+	margin-left: 30px;
+	height: 575px;
+	width: 918px;
+	float: left;
+}*/
+
+.content {
+	margin-top: 14px;
+	margin-left: 13px;
+	margin-left: 11px\0;
+	height: 600px;
+	width: 78%;
+	float: left;
+}
+
+.footer {
+	clear: both;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #CCCCCC;
+	background: #EFEFEF;
+}
+
+.hr_horizontal {
+	color: rgb(188, 187, 193);
+	width: 1200px;
+	width: 1198px\0;
+	filter: alpha(opacity = 100, finishopacity = 0, style = 3);
+	opacity: .5;
+}
+
+.hr_horizontal_inoutput {
+	border-bottom: 1px;
+	overflow: hidden;
+	color: rgb(188, 187, 193);
+	width: 919px;
+	width: 917px\0;
+	filter: alpha(opacity = 50);
+	opacity: .5;
+}
+
+.hr_horizontal_div {
+	margin-left: -15px;
+	margin-top: 40px;
+}
+
+.hr_horizontal_inoutputdiv {
+	margin-left: -9px;
+}
+
+.hr_horizontal_div_footer {
+	margin-left: -15px;
+	margin-top: 25px;
+}
+
+.hr_vertical {
+	color: rgb(188, 187, 193);
+	height: 608px;
+	width: 3px;
+	filter: alpha(opacity = 100, finishopacity = 0, style = 3);
+	opacity: .5;
+}
+
+.hr_vertical_div {
+	float: left;
+	margin-left: 30px;
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+}
+
+li {
+	list-style-type:none;
+}
+
+.tabs {
+    height: 610px;
+    text-align: left;
+    width: 913px;
+    padding-left: 4px;
+}
+
+.main1 {
+	clear: both;
+	padding: 8px;
+	text-align: center;
+}
+
+.menu1box {
+	position: relative;
+	overflow: hidden;
+	height: 40px;
+	width: 913px;
+	text-align: left;
+	background-color: #f5f5f5;
+	border-top: 1px solid #BCBBC1;
+	border-left: 1px solid #BCBBC1;
+	border-right: 1px solid #BCBBC1;
+}
+
+.menu1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	margin: 0 auto;
+	padding: 0;	
+	color:#3575B9;
+}
+
+.menu1 li {
+	float: left;
+	display: block;
+	cursor: pointer;
+	width: 200px;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	font-size:14pt;
+	font-family: Youyuan;
+	font-weight: bold;
+}
+
+.menu1 li.hover {
+	border-left: 1px solid rgb(188, 187, 193);
+	border-top: 1px solid rgb(188, 187, 193);
+	border-right: 1px solid rgb(188, 187, 193);
+	font-weight: bold;
+	color: #3575B9;
+	background-size: 200px 40px;
+	height: 40px;
+}
+
+.main1box {
+    border: 1px solid rgb(188, 187, 193);
+    clear: both;
+    height: 572px;
+    margin-top: -1px;
+    width: 913px;
+}
+
+.main1 ul {
+	display: none;
+}
+
+.main1 ul.block {
+	display: block;
+}
+
+.inoutput_param_div {
+	padding-top: 20px;
+	height: 220px;
+	overflow-x: auto;
+}
+
+.status_div {
+	padding-top: 4px;
+	height: 30px;
+}
+
+.description_div {
+	text-align: left;
+    padding-top: 20px;
+	height: 512px;
+	overflow-x:auto;
+}
+
+.description_label {
+	margin-left: 35px;	
+}
+
+.description_function{
+	font-size: 12px;
+	font-weight: bold;
+	color: #3575b9;
+}
+
+.description_function_method{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.description_input_div {
+	text-align: left;
+    padding-top: 20px;
+}
+
+.description_inputParameter{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.description_output_div {
+	text-align: left;
+    padding-top: 20px;
+}
+
+.description_outParameter{
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.description_table {
+	width: 833px;
+	border-collapse: collapse;
+    border: none;
+	margin-left: 35px;
+	margin-top: 8px;
+}
+
+.description_table td {
+	border: 1px solid rgb(188, 187, 193);
+	padding-left: 10px;
+	height: 30px;
+}
+
+.tipDiv{
+	position: relative;
+	float: left;
+	width: 16px;
+	height: 16px;
+	margin-top: 3px;
+	background-image: url("pic/helpTip.png");
+	cursor: pointer;
+}
+
+.tipContentDiv{
+	display: none;
+	border: 1px solid #BCBBC1;
+	background-color: #FFFFFF;
+	z-index: 0;
+	padding: 5px 10px;
+	color: gray;
+}
+
+#waittingDiv{
+	display: none;
+	z-index: 1000;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	border: none;
+	filter: alpha(opacity=45);
+	-moz-opacity: 0.45;
+	opacity: 0.45;
+	background-color: rgb(255, 255, 255);
+}
+
+#waittingImgDiv{
+	display: none;
+	z-index: 1001;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	overflow: visible;
+	width: 150px;
+	height: 10px;
+	border: none;
+}
+
+#waittingImg{
+	margin-top: -7px;
+	margin-left: -104px;
+}
+
+.userDisksTable td{
+	border: 1px solid rgb(188, 187, 193);
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 30px;
+}
+
+.userDisksTable {
+	border-collapse: collapse;
+	border: none;
+}
+
+.nicsTable td {
+	border: 1px solid rgb(188, 187, 193);
+	padding: 0px 5px;
+	height: 30px;
+}
+
+.nicsTable{
+	border-collapse: collapse;
+	border: none;
+}
+
+.vmQosInfoTable td {
+	border: 1px solid rgb(188, 187, 193);
+	padding: 0px 5px;
+	height: 30px;
+}
+
+.vmQosInfoTable{
+	border-collapse: collapse;
+	border: none;
+}
+
+.userDiskSizeInput{
+	width: 80px;
+}
+
+.userDiskQos{
+	width: 450px;
+}
+
+.userDiskQosDel{
+	width: 11px;
+	height: 11px;
+	background-image: url("pic/del_16.gif");
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.userDiskQosDelTd{
+	border: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#addUserDiskQos{
+	width: 16px;
+	height: 16px;
+	background-image: url("pic/add.png");
+	display: block;
+	clear: both;
+	cursor: pointer;
+	margin-left: 8px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+
+.sourcecode_div {
+	text-align: left;
+    padding-top: 20px;
+    margin-left: 35px;
+	height: 512px;
+	overflow-x:auto;
+}
+
+.btn {
+	border-right: rgb(188, 187, 193) 1px solid; 
+	border-top: rgb(188, 187, 193) 1px solid; 
+	font-size: 12px; 
+	border-left: rgb(188, 187, 193) 1px solid; 
+	cursor: pointer; 
+	color: black; 
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	border-bottom: rgb(188, 187, 193) 1px solid;
+	width: auto;
+}
+
+.btn_get {
+	border-right: rgb(222, 222, 222) 1px solid; 
+	border-top: rgb(222, 222, 222) 1px solid; 
+	border-left: rgb(222, 222, 222) 1px solid; 
+	border-bottom: rgb(222, 222, 222) 1px solid;
+	font-size: 12px; 
+	cursor: pointer; 
+	width: auto;
+	background-color: rgb(242, 242, 242);
+	height:20px;
+}
+
+.btn_get_mouseover {
+	border-right: #7b9ebd 1px solid; 
+ 	border-top: #7b9ebd 1px solid; 
+	border-left: #7b9ebd 1px solid; 
+	border-bottom: #7b9ebd 1px solid;
+	font-size: 12px; 
+	cursor: pointer; 
+	width: auto;
+	background-color: rgb(242, 242, 242);
+	height:20px;
+}
+
+.btn_mouseover {
+ 	border-right: #7b9ebd 1px solid; 
+ 	border-top: #7b9ebd 1px solid; 
+ 	font-size: 12px; 
+ 	border-left: #7b9ebd 1px solid; 
+ 	cursor: pointer; 
+ 	color: black; 
+	padding-top: 3px; 
+	padding-bottom: 3px;
+ 	border-bottom: #7b9ebd 1px solid;
+ 	width: auto;
+}
+
+.span_tip {
+	color: rgb(255, 0, 0);	
+}
+
+.a_anchor {
+	text-decoration: none;
+	color: #1173DF;
+}
+
+.a_anchor_top {
+	padding-top: 25px;
+}
+
+.back_img {
+	width: 16px;
+	height: 16px;
+	padding: 2px 0 12px 5px;
+}
+
+.shortInput {
+	margin: 0;
+	font-family: Microsoft Yahei, Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+	font-size: 12px;
+	color:gray;
+	width: 95px;
+}
+
+/* 2014.4.9 新增   */
+
+.middle{
+    border:0px black solid;
+    height:578px;
+    max-height:578px;
+    width:100%;
+    max-width:1168px;
+}
+#changeLang{
+	height:20px;
+	width:80px;
+}
+
+.portal{
+    border:0px black solid;
+    height:578px;
+    max-height:578px;
+    width:100%;
+    max-width:1168px;
+}
+
+/*2014.4.18 新增*/
+
+/**/
+.thickbox_over{
+	border-right: #7b9ebd 1px solid; 
+ 	border-top: #7b9ebd 1px solid; 
+ 	font-size: 12px; 
+ 	border-left: #7b9ebd 1px solid; 
+ 	cursor: pointer; 
+ 	color: black; 
+	padding-top: 3px; 
+	padding-bottom: 3px;
+ 	border-bottom: #7b9ebd 1px solid;
+ 	width: 150px;
+}
+
+.thickbox{
+	border-right: rgb(188, 187, 193) 1px solid; 
+	border-top: rgb(188, 187, 193) 1px solid; 
+	font-size: 12px; 
+	border-left: rgb(188, 187, 193) 1px solid; 
+	cursor: pointer; 
+	color: black; 
+	padding-top: 3px; 
+	padding-bottom: 3px;
+	border-bottom: rgb(188, 187, 193) 1px solid;
+	width: 150px;
+}
+
+.vmName{
+	float: left;
+	width: 255px;
+	width: 253px\0;	
+}
+
+.vmNameInput{
+	float: left;
+	width: 230px;
+	margin: 3px 0px;
+}
+
+.vmNameDel{
+	width: 11px;
+	height: 11px;
+	background-image: url("pic/del_16.gif");
+	background-repeat: no-repeat;
+	float: left;
+	margin-top: 7px;
+	margin-left: 3px;
+	cursor: pointer;
+}
+
+#addVMName{
+	width: 16px;
+	height: 16px;
+	background-image: url("pic/add.png");
+	display: block;
+	clear: both;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+

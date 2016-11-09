@@ -1,0 +1,283 @@
+<a name="top" class="a_anchor_top"></a>
+<div>
+<table style="width: 100%;">
+<tr>
+<td style="width: 190px;"><label class="description_label description_function" id="queryDataStoresInterface"></label></td>
+<td><label class="description_function" id="queryDataStoresInterfaceName"></label></td>
+</tr>
+<tr>
+<td colspan="2"><label class="description_label" id="queryDataStoresDesc"></label></td>
+</tr>
+</table>
+</div>
+<div class="description_input_div">
+	<!-- 输入参数描述 -->
+	<label class="description_label" id="inputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>siteUri</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="queryDataStoresReqEx_siteUriTd"></label></td>
+		</tr>
+		<tr>
+			<td>datastoreQueryParams</td>
+			<td><a class="a_anchor" href="#DatastoreQueryParamsInfo" name="DatastoreQueryParams">DatastoreQueryParams</a></td>
+			<td><label id="required"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParamsTd"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- DatastoreQueryParams描述 -->
+	<div class="left">
+		<label class="description_label"><a name="DatastoreQueryParamsInfo">DatastoreQueryParams:</a></label>
+	</div>
+	<div>
+		<a href="#DatastoreQueryParams"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"  ></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>limit</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParams_limitTd"></label></td>
+		</tr>
+		<tr>
+			<td>offset</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParams_offsetTd"></label></td>
+		</tr>
+			<tr>
+			<td>scope</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParams_scopeTd"></label></td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParams_statusTd"></label></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParams_nameTd"></label></td>
+		</tr>
+		<tr>
+			<td>exceptDatastoreType</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryDataStoresReqEx_datastoreQueryParams_exceptDatastoreTypeTd"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- 返回参数描述 -->
+	<label class="description_label" id="outputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="outputParameterTd"></label></td>
+			<td width="20%"><label id="outputTypeTd"></label></td>
+			<td width="60%"><label id="outputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>total</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_totalTd"></label></td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>List&lt;<a class="a_anchor" href="#DatastoreInfo" name="Datastore">Datastore</a>&gt;</td>
+			<td><label id="queryDataStoresResp_listTd"></label></td>
+		</tr>
+		<tr>
+			<td>errorCode</td>
+			<td>String</td>
+			<td><label id="codeTd"></label></td>
+		</tr>
+	</table>
+</div>
+
+<div class="description_output_div">
+	<!-- Datastore描述 -->
+	<div class="left">
+		<label class="description_label"><a name="DatastoreInfo">Datastore:</a></label>
+	</div>
+	<div>
+		<a href="#Datastore"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="60%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>urn</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_urn"></label></td>
+		</tr>
+		<tr>
+			<td>uri</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_uri"></label></td>
+		</tr>
+		<tr>
+			<td>suUrn</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_suUrn"></label></td>
+		</tr>
+		<tr>
+			<td>suName</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_suName"></label></td>
+		</tr>
+		<tr>
+			<td>storageType</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_storageType"></label></td>
+		</tr>
+		<tr>
+			<td>clusterSize</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_clusterSize"></label></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_name"></label></td>
+		</tr>
+		<tr>
+			<td>status</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_status"></label></td>
+		</tr>
+		<tr>
+			<td>capacityGB</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_capacityGB"></label></td>
+		</tr>
+		<tr>
+			<td>usedSizeGB</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_usedSizeGB"></label></td>
+		</tr>
+		<tr>
+			<td>freeSizeGB</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_freeSizeGB"></label></td>
+		</tr>
+		<tr>
+			<td>hosts</td>
+			<td>List&lt;String&gt;</td>
+			<td><label id="queryDataStoresResp_Datastore_hosts"></label></td>
+		</tr>
+		<tr>
+			<td>isThin</td>
+			<td>Boolean</td>
+			<td><label id="queryDataStoresResp_Datastore_isThin"></label></td>
+		</tr>
+		<tr>
+			<td>description</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_description"></label></td>
+		</tr>
+		<tr>
+			<td>thinRate</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_thinRate"></label></td>
+		</tr>
+		<tr>
+			<td>actualCapacityGB</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_actualCapacityGB"></label></td>
+		</tr>
+		<tr>
+			<td>actualFreeSizeGB</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_actualFreeSizeGB"></label></td>
+		</tr>
+		<tr>
+			<td>refreshTime</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_refreshTime"></label></td>
+		</tr>
+		<tr>
+			<td>version</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_version"></label></td>
+		</tr>
+		<tr>
+			<td>ioDelay</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_ioDelay"></label></td>
+		</tr>
+		<tr>
+			<td>expandCount</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_expandCount"></label></td>
+		</tr>
+		<tr>
+			<td>suIdList</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_Datastore_suIdList"></label></td>
+		</tr>
+		<tr>
+			<td>siocFlag</td>
+			<td>Integer</td>
+			<td><label id="queryDataStoresResp_Datastore_siocFlag"></label></td>
+		</tr>
+		<tr>
+			<td>storageUnits</td>
+			<td><a class="a_anchor" href="#StorageUnitsInfo" name="storageUnits">StorageUnit</a></td>
+			<td><label id="queryDataStoresResp_Datastore_storageUnits"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_input_div">
+	<!-- DatastoreQueryParams描述 -->
+	<div class="left">
+		<label class="description_label"><a name="StorageUnitsInfo">StorageUnit:</a></label>
+	</div>
+	<div>
+		<a href="#storageUnits"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"  ></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="60%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>urn</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_StorageUnit_urn"></label></td>
+		</tr>
+		<tr>
+			<td>suName</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_StorageUnit_suName"></label></td>
+		</tr>
+		<tr>
+			<td>sdName</td>
+			<td>String</td>
+			<td><label id="queryDataStoresResp_StorageUnit_sdName"></label></td>
+		</tr>
+	</table>
+</div>

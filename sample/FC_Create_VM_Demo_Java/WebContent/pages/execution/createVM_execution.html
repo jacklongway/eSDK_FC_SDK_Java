@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+		<script src="js/thickbox.js" type="text/javascript"></script>
+		<script src="js/jquery.ui.core.js" type="text/javascript"></script>
+		<script src="js/jquery.ui.datepicker.js" type="text/javascript"></script>
+		<script src="js/jquery.ui.widget.js" type="text/javascript"></script>
+		<script src="js/jquery.ui.datepicker-zh-TW.js" type="text/javascript"></script>
+		<link href="css/thickbox.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="css/themes/base/jquery.ui.all.css" media="screen" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%"><label id="inputParam"></label></td>
+			<td  width="15%"></td>
+			<td style="width: 250px;text-align: left;">
+				<input alt="#TB_inline?height=600&width=1050&inlineId=CreateVMDialog" 
+					title="create in batches" class="thickbox" type="button" 
+					value="Create" id="CreateVMBtnLabel" onclick="initCreateVm();"
+					onmouseover="this.className='thickbox_over';" onmouseout="this.className='thickbox';"/> 
+			</td >
+			<td></td>
+		</tr>
+	</table>
+	<div id="CreateVMDialog" style="display: none;">
+		<div>
+			<table style="width: 1044px;">
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" />
+					<td style="width: 172px;" />
+					<td style="width: 556px;"/>
+					<td style="width: 247px;"/>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;"><font color='red'>* </font></td>
+					<td style="width: 172px;"><label id="querySiteReqEx_uriLabel"></label></td>
+					<td align="left">
+					    <div id="querySiteReqEx_uri_select" style="width:100px;height:20px;float:left;position:relative;">
+							<select id = "querySiteReqEx_uri" style="width:234px;">
+							</select>
+						</div>
+					</td>
+					<td align="left"><span class="span_tip" id="querySiteReqEx_uriErrTip" ></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;"><font color='red'>* </font></td>
+					<td style="width: 172px;">
+						<select style="width: 155px;" id="vmLocationSelect" name="vmLocation" onchange="queryClusterAndHost()">
+							<option value="vmLocation_Cluster" selected="selected">vmLocation_Cluster</option>
+							<option value="vmLocation_Host" >vmLocation_Host</option>
+						</select>
+					</td>
+					<td align="left">
+						<div id="createVM_clusterAndHost_select" style="width:100px;height:20px;float:left;margin-left:14%;position:relative;left:-78px">
+							<select id="createVM_clusterAndHost" style="width:234px;">
+							</select>
+						</div>
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_clusterAndHostTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;"></td>
+					<td style="width: 172px;"><label id="createVMReq_nameLabel" /></td>
+					<td align="left">
+						<input type="text" id="createVMReq_name" value=""
+							style="color:gray;" />
+					</td>
+					<td />
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;"><font color='red'>* </font></td>
+					<td style="width: 172px;vertical-align: top;">
+						<label id="createVMReq_SystemStyleLabel" />
+					</td>
+					<td align="left">
+						<div style="width:100px;height:20px;float:left;margin-left:14%;position:relative;left:-78px">
+							<select style="width: 155px;" id="osOptionSelect" name="osType" onchange="queryOsVersions()">
+								<option value="Windows" >Windows</option>
+								<option value="Linux" >Linux</option>
+								<option value="Other" >Other</option>
+							</select>
+						</div>
+					</td>
+					<td />
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;"><font color='red'>* </font></td>
+					<td style="width: 172px;vertical-align: top;">
+						<label id="createVMReq_SystemVersionLabel" />
+					</td>
+					<td align="left">
+						<div id="createVM_OsVersions_select" style="width:100px;height:20px;float:left;margin-left:14%;position:relative;left:-78px">
+							<select id = "createVM_OsVersions" style="width:234px;">
+							</select>
+						</div>
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_OsVersionsTip"></span></td>
+				</tr>
+				<tr>
+					<td />
+					<td />
+					<td />
+					<td />
+					<td />
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;border-bottom: 1px dotted gray;" />
+					<td colspan="3" style="border-bottom: 1px dotted gray;"><label id=createVMReq_vmParametersLabel /></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td style="width: 172px;color: blue;"><label id="createVMReq_vmParameters_CPUSetLabel" /></td>
+					<td style="" />
+					<td style="" />
+				</tr>
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" ><font color='red'>* </font></td>
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_CPUSet_cpuNumLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_CPUSet_cpuNum" onblur="clearBlurStyle(this)" value=""
+							style="color:gray;"/>
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_CPUSet_cpuNumErrTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" ></td>
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_CPUSet_ReservationLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_CPUSet_Reservation" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;" />
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_CPUSet_ReservationErrTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" ></td>
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_CPUSet_WeightLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_CPUSet_Weight" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;"/>
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_CPUSet_WeightErrTip"></span></td>
+				</tr>
+				
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" ></td>
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_CPUSet_limitLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_CPUSet_Limit" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;"/>
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_CPUSet_LimitErrTip"></span></td>
+				</tr>
+				
+				
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td style="width: 172px;color: blue;"><label id="createVMReq_vmParameters_MemorySetLabel" /></td>
+					<td style="" />
+					<td style="" />
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;"><font color='red'>* </font></td>
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_MemorySet_memoryNumLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_MemorySet_memoryNum" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;" />
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_MemorySet_memoryNumErrTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" />
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_MemorySet_reservationLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_MemorySet_reservation" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;"/>
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_MemorySet_reservationErrTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" />
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_MemorySet_weightLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_MemorySet_weight" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;" />
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_MemorySet_weightErrTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;" />
+					<td style="width: 5px;" />
+					<td style="width: 172px;"><label id="createVMReq_vmParameters_MemorySet_limitLabel" /></td>
+					<td style="text-align: left;">
+						<input type="text" id="createVMReq_vmParameters_MemorySet_limit" value="" onblur="clearBlurStyle(this)"
+							style="color:gray;" />
+					</td>
+					<td style="text-align: left;"><span class="span_tip" id="createVMReq_vmParameters_MemorySet_limitErrTip"></span></td>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td style="width: 172px;color: blue;"><label id="createVMReq_vmParameters_nicsLabel" /></td>
+					<td style="" />
+					<td style="" />
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td colspan="3">
+						<table id="nicsListTable" class="nicsTable">
+							<tr>
+								<td style="width: 500px;">
+									<font style="float: left;" color='red'>* </font><label style="float: left;" id="createVMReq_vmParameters_nics_portGroupUrnLabel"></label>
+								</td>
+								<td style="width: 115px">
+									<label id="createVMReq_vmParameters_nics_nameLabel"></label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div id="createVM_portGroups_select" style="width:230px;height:20px;float:left;position:relative;">
+										<input type="text" id="createVM_PortGroups" name="portGroups" onblur="clearBlurStyle(this)"/>
+									</div>
+									<div style="width:73px;height:24px;float:left;position:relative;">
+										<input name="networkID" class="btn_get" style="margin-left:12px;" onmouseover="this.className='btn_get_mouseover';" onmouseout="this.className='btn_get';" type="button" id="getPortGroupsBtn" onclick="getPortGroups();"/>
+									</div>
+									&nbsp;<span class="span_tip" id="createVMReq_vmParameters_portGroupErrTip" style="margin-left:35px;"></span>
+								</td>
+								<td>
+									<input type="text" name="name" id="name" class="userDiskSizeInput" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td style="width: 172px;color: blue;"><label id="createVMReq_vmParameters_userDisksLabel" /></td>
+					<td style="" />
+					<td style="" />
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td colspan="3">
+						<table id="userDisksListTable" class="userDisksTable">
+							<tr>
+								<td style="width: 220px;">
+									<font color='red'>* </font>
+									<label  id="createVMReq_vmParameters_userDisks_bsSizeLabel"></label>
+								</td>
+								<td  style="width: 450px;">
+									<font color='red'>* </font>
+									<label id="createVMReq_vmParameters_userDisks_datastoreUrnLabel"></label>
+								</td>
+								<td  style="width: 220px;">
+									<font color='red'>* </font>
+									<label id="createVMReq_vmParameters_userDisks_sequenceNumLabel"></label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" id="userDiskBsSize" name="userDiskBsSize" class="userDiskSizeInput" onblur="clearBlur2Style(this)"/>
+									&nbsp;<span class="span_tip" id="createVMReq_VM_diskNotNullErrTip" ></span>
+								</td>
+								<td>
+									<div id="createVM_datastoreUrn_select" style="width:230px;height:20px;float:left;position:relative;"><input type="text" name="datastoreUrn" id="createVM_getDatastoreUrn" onblur="clearBlurStyle(this)"/></div>
+									<div style="width:73px;height:24px;float:left;position:relative;"><input name="datastoreUrn" class="btn_get" style="margin-left:12px;" onmouseover="this.className='btn_get_mouseover';" onmouseout="this.className='btn_get';" type="button" id="getDatastoreUrnBtn" onclick="getDatastoreUrn();"/></div>
+									&nbsp;<span class="span_tip" id="createVMReq_vmParameters_dataStoreErrTip" style="margin-left:35px;"></span>
+								</td>
+								<td>
+									<input type="text" id="sequenceNum" name="sequenceNum" class="userDiskSizeInput" onblur="clearBlur2Style(this)"/>
+									&nbsp;<span class="span_tip" id="createVMReq_VM_sequenceNumNotNullErrTip" ></span>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+					</td>
+				</tr>
+				<tr>
+					<td style="width: 53px;"/>
+					<td style="width: 5px;" />
+					<td colspan="3">
+						<input class="btn_login" style="width: 200px;" type="button"  id="createVMBtn" onclick="createVMCall();"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="5">
+						<div style="width: 100%;height: 30px;"></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade="noshade" />
+</div>
+
+<div class="inoutput_param_div">
+	<table width="100%">
+		<tr>
+			<td width="10%">
+			    <label id="outputParam"></label>
+			</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" width="15%"><label id="resultCode"></label>
+			</td>
+			<td align="left"><input type="text" id="createVM_resultCode"
+				name="batchCreateVM_resultCode" readonly="readonly" />
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="left" valign="top"><label id="VMInfoLabel"></label>
+			</td>
+			<td align="left">
+			    <textarea id="VMInfo"
+					name="VMInfo" readonly="readonly"></textarea>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="hr_horizontal_inoutputdiv">
+	<hr class="hr_horizontal_inoutput" noshade="noshade" />
+</div>
+
+<div class="status_div">
+	<label id="createVM_status" style="color:red;"></label>
+</div>
+
+	</body>
+</html>

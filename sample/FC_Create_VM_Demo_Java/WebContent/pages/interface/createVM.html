@@ -1,0 +1,277 @@
+<ul class="block">
+	<li>
+		<div id="createVM_desc" class="description_div">
+			<!-- append description -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="createVM_execution">
+			<!-- append execution code -->
+		</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div id="createVM_src" class="sourcecode_div">
+			<!-- append source code -->
+		</div>
+	</li>
+</ul>
+
+<script type="text/javascript"><!--
+	$(document).ready(function(){
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : "pages/description/createVM_desc.html",
+			async : false,
+			success : function(data) {
+				$("#createVM_desc").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : "pages/execution/createVM_execution.html",
+			async : false,
+			success : function(data) {
+				$("#createVM_execution").html(data);
+			}
+		});
+		
+		$.ajax({
+			type : "get",
+			cache : false,
+			url : "pages/sourcecode/createVM_src.html",
+			async : false,
+			success : function(data) {
+				$("#createVM_src").html(data);
+			}
+		});
+	});
+
+	
+	
+	
+	function showVMList(vmlist)
+	{
+		if(!vmlist)
+		{
+			return "Create none.";
+		}
+		
+		var str = "Create one VM.\n";
+	    
+		str += "urn:" + vmlist.urn + "\n";
+	    str += "uri:" + vmlist.uri + "\n";
+	    str += "taskUrn:" + vmlist.taskUrn + "\n";
+	    str += "taskUri:" + vmlist.taskUri + "\n";
+	    str += "\n";
+		return str;
+	}
+	
+	function checkInputParams()
+	{
+		var correctFlag = true;
+		var $focusObject = null;
+		
+		var $clusterAndHost = $("#createVM_clusterAndHost");
+		if(isEmpty($clusterAndHost.val()))
+		{
+			$focusObject = $focusObject==null?$clusterAndHost:$focusObject;
+			$clusterAndHost.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_clusterAndHostTip").html(controller.language.titles["createVMReq_clusterAndHostTip"]);
+			correctFlag = false;
+		}
+		
+		var $siteUri = $("#querySiteReqEx_uri");
+		if(isEmpty($siteUri.val()))
+		{
+			$focusObject = $focusObject==null?$siteUri:$focusObject;
+			$siteUri.css({"background-color":"#FBE9E5"});
+			$("#querySiteReqEx_uriErrTip").html(controller.language.titles["querySiteUriEx_uriNotNullTip"]);
+			correctFlag = false;
+		}
+		
+		var $osVersions = $("#createVM_OsVersions");
+		var osVersionsTip = $("#createVMReq_OsVersionsTip");
+		if(isEmpty($osVersions.val()))
+		{
+			$focusObject = $focusObject==null?$osVersions:$focusObject;
+			$osVersions.css({"background-color":"#FBE9E5"});
+			osVersionsTip.html(controller.language.titles["createVMReq_OsVersionsTip"]);
+			correctFlag = false;
+		}
+		
+		var $userDiskBsSize = $("#userDiskBsSize");
+		if(isEmpty($userDiskBsSize.val()))
+		{
+			$focusObject = $focusObject==null?$userDiskBsSize:$focusObject;
+			$userDiskBsSize.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_VM_diskNotNullErrTip").html(controller.language.titles["createVMReq_VM_diskNotNull"]);
+			correctFlag = false;
+		}
+		
+		if(!isNumber($userDiskBsSize.val()) || parseInt($userDiskBsSize.val())<=0)
+		{
+			$focusObject = $focusObject==null?$userDiskBsSize:$focusObject;
+			$userDiskBsSize.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_VM_diskNotNullErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $dataStoreUrn = $("#createVM_getDatastoreUrn");
+		if(isEmpty($dataStoreUrn.val()))
+		{
+			$focusObject = $focusObject==null?$dataStoreUrn:$focusObject;
+			$dataStoreUrn.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_dataStoreErrTip").html(controller.language.titles["createVMReq_vmParameters_dataStoreNotNull"]);
+			correctFlag = false;
+		}
+		
+		var $sequenceNum = $("#sequenceNum");
+		if(isEmpty($sequenceNum.val()))
+		{
+			$focusObject = $focusObject==null?$sequenceNum:$focusObject;
+			$sequenceNum.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_VM_sequenceNumNotNullErrTip").html(controller.language.titles["createVMReq_VM_sequenceNumNotNull"]);
+			correctFlag = false;
+		}
+		
+		if(!isNumber($sequenceNum.val()) || parseInt($sequenceNum.val())<=0)
+		{
+			$focusObject = $focusObject==null?$sequenceNum:$focusObject;
+			$sequenceNum.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_VM_sequenceNumNotNullErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $createVMPortGroups = $("#createVM_PortGroups");
+		if(isEmpty($createVMPortGroups.val()))
+		{
+			$focusObject = $focusObject==null?$createVMPortGroups:$focusObject;
+			$createVMPortGroups.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_portGroupErrTip").html(controller.language.titles["createVMReq_vmParameters_portGroupNotNull"]);
+			correctFlag = false;
+		}
+		
+		var $cpuQuantity = $("#createVMReq_vmParameters_CPUSet_cpuNum");
+		if(isEmpty($cpuQuantity.val()) || !isNumber($cpuQuantity.val()))
+		{
+			$focusObject = $focusObject==null?$cpuQuantity:$focusObject;
+			$cpuQuantity.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_CPUSet_cpuNumErrTip").html(controller.language.titles["createVMReq_vmConfig_cpu_quantityTip"]);
+			correctFlag = false;
+		}
+		
+		if(parseInt($cpuQuantity.val())<1 || parseInt($cpuQuantity.val())>64)
+		{
+			$focusObject = $focusObject==null?$cpuQuantity:$focusObject;
+			$cpuQuantity.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_CPUSet_cpuNumErrTip").html(controller.language.titles["createVMReq_vmConfig_cpu_quantityoutRangeTip"]);
+			correctFlag = false;
+		}
+		
+		var $memoryNum = $("#createVMReq_vmParameters_MemorySet_memoryNum");
+		var memoryNumErrTip = $("#createVMReq_vmParameters_MemorySet_memoryNumErrTip");
+		if(isEmpty($memoryNum.val()) || !isNumber($memoryNum.val()))
+		{
+			$focusObject = $focusObject==null?$memoryNum:$focusObject;
+			$memoryNum.css({"background-color":"#FBE9E5"});
+			memoryNumErrTip.html(controller.language.titles["createVMReq_vmParameters_MemorySet_memoryNumErr_notNumTip"]);
+			correctFlag = false;
+		}
+		if(parseInt($memoryNum.val())<128 || parseInt($memoryNum.val())>1024*1024)
+		{
+			$focusObject = $focusObject==null?$memoryNum:$focusObject;
+			$memoryNum.css({"background-color":"#FBE9E5"});
+			memoryNumErrTip.html(controller.language.titles["createVMReq_vmParameters_MemorySet_memoryNumErr_outRangeTip"]);
+			correctFlag = false;
+		}
+		
+		var $cpuReservation = $("#createVMReq_vmParameters_CPUSet_Reservation");
+		if(!isNumber($cpuReservation.val()) || parseInt($cpuReservation.val())<0)
+		{
+			$focusObject = $focusObject==null?$cpuReservation:$focusObject;
+			$cpuReservation.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_CPUSet_ReservationErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $cpuWeight = $("#createVMReq_vmParameters_CPUSet_Weight");
+		if(!isNumber($cpuWeight.val()) || parseInt($cpuWeight.val())<=0)
+		{
+			$focusObject = $focusObject==null?$cpuWeight:$focusObject;
+			$cpuWeight.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_CPUSet_WeightErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $cpuLimit = $("#createVMReq_vmParameters_CPUSet_Limit");
+		if(!isNumber($cpuLimit.val()) || parseInt($cpuLimit.val())<0)
+		{
+			$focusObject = $focusObject==null?$cpuLimit:$focusObject;
+			$cpuLimit.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_CPUSet_LimitErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $memoryReservation = $("#createVMReq_vmParameters_MemorySet_reservation");
+		if(!isNumber($memoryReservation.val()) || parseInt($memoryReservation.val())<0)
+		{
+			$focusObject = $focusObject==null?$memoryReservation:$focusObject;
+			$memoryReservation.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_MemorySet_reservationErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $memoryWeight = $("#createVMReq_vmParameters_MemorySet_weight");
+		if(!isNumber($memoryWeight.val()) || parseInt($memoryWeight.val())<=0)
+		{
+			$focusObject = $focusObject==null?$memoryWeight:$focusObject;
+			$memoryWeight.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_MemorySet_weightErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		var $memoryLimit = $("#createVMReq_vmParameters_MemorySet_limit");
+		if(!isEmpty($memoryLimit.val()) &&  parseInt($memoryLimit.val()) != parseInt($("#createVMReq_vmParameters_MemorySet_memoryNum").val()))
+		{
+			$focusObject = $focusObject==null?$memoryLimit:$focusObject;
+			$memoryLimit.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_MemorySet_limitErrTip").html(controller.language.titles["createVMReq_MemorySet_limit_illegalNull"]);
+			correctFlag = false;
+		}
+		
+		if(!isNumber($memoryLimit.val()))
+		{
+			$focusObject = $focusObject==null?$memoryLimit:$focusObject;
+			$memoryLimit.css({"background-color":"#FBE9E5"});
+			$("#createVMReq_vmParameters_MemorySet_limitErrTip").html(controller.language.titles["queryDataStores_offset_numRangeNull"]);
+			correctFlag = false;
+		}
+		
+		if($focusObject) $focusObject.focus();
+		return correctFlag;
+	}
+	
+	function clearcreateVMErrTips()
+	{
+		$("#getOrgReqEx_tenantIDErrTip").empty();
+		$("#getCloudInfraReqEx_cloudInfraIDErrTip").empty();
+		$("#getVMTempReqEx_vmTemplIDErrTip").empty();
+		$("#createVMReq_countErrTip").empty();
+		$("#getVMFlavorReqEx_vmFlavorErrTip").empty();
+		$("#createVMReq_vmParameters_CPUSet_cpuNumErrTip").empty();
+		$("#createVMReq_vmParameters_MemorySet_memoryNumErrTip").empty();
+		$("#createVMReq_vmParameters_userDisksErrTip").empty();
+		$("#createVMReq_vmParameters_nicsErrTip").empty();
+		$("input[type='text']").each(function(){
+			$(this).css({"background-color":"#FFFFFF"});
+		});
+	}
+	
+--></script>

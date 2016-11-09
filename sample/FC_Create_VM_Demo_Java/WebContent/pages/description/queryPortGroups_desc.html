@@ -1,0 +1,200 @@
+<a name="top" class="a_anchor_top"></a>
+<div>
+<table style="width: 100%;">
+<tr>
+<td style="width: 180px;"><label class="description_label description_function" id="PortGroupResourceInterface"></label></td>
+<td><label class="description_function" id="PortGroupResourceInterfaceName"></label></td>
+</tr>
+<tr>
+<td colspan="2"><label class="description_label" id="PortGroupDesc"></label></td>
+</tr>
+</table>
+</div>
+<div class="description_input_div">
+	<!-- 输入参数描述 -->
+	<label class="description_label" id="inputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="inputParameterTd"></label></td>
+			<td width="20%"><label id="inputTypeTd"></label></td>
+			<td width="12%"><label id="inputRestrictionTd"></label></td>
+			<td width="48%"><label id="inputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>dvswitchUri</td>
+			<td>String</td>
+			<td><label id="required"></label></td>
+			<td><label id="queryPortGroupsReqEx_dvswitchUriTd"></label></td>
+		</tr>
+		<tr>
+			<td>offset</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryPortGroupsReqEx_offsetTd"></label></td>
+		</tr>
+		<tr>
+			<td>limit</td>
+			<td>Integer</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryPortGroupsReqEx_limitTd"></label></td>
+		</tr>
+		<tr>
+			<td>portGroupName</td>
+			<td>String</td>
+			<td><label id="optional"></label></td>
+			<td><label id="queryPortGroupsReqEx_portGroupNameTd"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- 返回参数描述 -->
+	<label class="description_label" id="outputParameterDesc"></label>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="outputParameterTd"></label></td>
+			<td width="20%"><label id="outputTypeTd"></label></td>
+			<td width="60%"><label id="outputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>total</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_totalTd"></label></td>
+		</tr>
+		<tr>
+			<td>list</td>
+			<td>List&lt;<a class="a_anchor" href="#PortGroupInfo" name="PortGroup">PortGroup</a>&gt;</td>
+			<td><label id="queryPortGroupsResp_listTd"></label></td>
+		</tr>
+		<tr>
+			<td>errorCode</td>
+			<td>String</td>
+			<td><label id="codeTd"></label></td>
+		</tr>
+	</table>
+</div>
+<div class="description_output_div">
+	<!-- PortGroup描述 -->
+	<div class="left">
+		<label class="description_label"><a name="PortGroupInfo">PortGroup:</a></label>
+	</div>
+	<div>
+		<a href="#PortGroup"><img class="back_img" src="pic/back.png"></a>
+	</div>
+	<table class="description_table">
+		<tr style="background-color: #E7E7E7;">
+			<td width="20%"><label id="outputParameterTd"></label></td>
+			<td width="20%"><label id="outputTypeTd"></label></td>
+			<td width="60%"><label id="outputDescriptionTd"></label></td>
+		</tr>
+		<tr>
+			<td>urn</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_urn"></label></td>
+		</tr>
+		<tr>
+			<td>uri</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_uri"></label></td>
+		</tr>
+		<tr>
+			<td>name</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_name"></label></td>
+		</tr>
+		<tr>
+			<td>description</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_description"></label></td>
+		</tr>
+		<tr>
+			<td>isDhcpIsolation</td>
+			<td>Boolean</td>
+			<td><label id="queryPortGroupsResp_PortGroup_isDhcpIsolation"></label></td>
+		</tr>
+		<tr>
+			<td>isIpMacBind</td>
+			<td>Boolean</td>
+			<td><label id="queryPortGroupsResp_PortGroup_isIpMacBind"></label></td>
+		</tr>
+		<tr>
+			<td>portType</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_portType"></label></td>
+		</tr>
+		<tr>
+			<td>vlanId</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_vlanId"></label></td>
+		</tr>
+		<tr>
+			<td>vxlanId</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_vxlanId"></label></td>
+		</tr>
+		<tr>
+			<td>vlanRange</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_vlanRange"></label></td>
+		</tr>
+		<tr>
+			<td>txLimit</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_txLimit"></label></td>
+		</tr>
+		<tr>
+			<td>txPeakLimit</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_txPeakLimit"></label></td>
+		</tr>
+		<tr>
+			<td>txBurstSize</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_txBurstSize"></label></td>
+		</tr>
+		<tr>
+			<td>txWeight</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_txWeight"></label></td>
+		</tr>
+		<tr>
+			<td>priority</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_priority"></label></td>
+		</tr>
+		<tr>
+			<td>rxLimit</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_rxLimit"></label></td>
+		</tr>
+		<tr>
+			<td>rxPeakLimit</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_rxPeakLimit"></label></td>
+		</tr>
+		<tr>
+			<td>rxBurstSize</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_rxBurstSize"></label></td>
+		</tr>
+		<tr>
+			<td>subnetUrn</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_subnetUrn"></label></td>
+		</tr>
+		<tr>
+			<td>multicastIp</td>
+			<td>String</td>
+			<td><label id="queryPortGroupsResp_PortGroup_multicastIp"></label></td>
+		</tr>
+		<tr>
+			<td>arpBcstSuppress</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_arpBcstSuppress"></label></td>
+		</tr>
+		<tr>
+			<td>ipBcstSuppress</td>
+			<td>Integer</td>
+			<td><label id="queryPortGroupsResp_PortGroup_ipBcstSuppress"></label></td>
+		</tr>
+	</table>
+</div>
